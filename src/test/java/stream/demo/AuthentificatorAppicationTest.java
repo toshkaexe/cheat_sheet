@@ -1,10 +1,11 @@
-package authentificator;
+package stream.demo;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class AuthenticatorApplicationTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AuthentificatorAppicationTest {
     @Test
     public void testAuthenticate() {
         AuthenticatorInterface authenticatorMock;
@@ -28,14 +29,6 @@ public class AuthenticatorApplicationTest {
 
 
 
-
-
-
-
-
-
     }
-
-
-
 }
+

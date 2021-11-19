@@ -1,4 +1,4 @@
-package authentificator;
+package stream.demo;
 
 public class AuthenticatorApplication {
     private AuthenticatorInterface authenticator;
