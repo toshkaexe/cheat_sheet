@@ -20,8 +20,12 @@ public class AuthenticatorApplication {
      * @return True if the user has been authenticated; false if it has not.
      */
     public boolean authenticate(String username, String password) {
-        boolean authenticated;
-        authenticated = this.authenticator.authenticateUser(username, password);
+        boolean authenticated = this.authenticator.authenticateUser(username, password);
         return authenticated;
+    }
+
+    public void authenticate_withException(String username, String password) throws NotAuthenticatedException
+    {
+        this.authenticator.authenticateUser(username,password);
     }
 }

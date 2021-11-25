@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
+
 
 public class AuthentificatorAppicationTest {
     @Test
@@ -16,7 +19,7 @@ public class AuthentificatorAppicationTest {
         String password_true = "truePassword";
         authenticatorMock = Mockito.mock(AuthenticatorInterface.class);
         authenticator = new AuthenticatorApplication(authenticatorMock);
-
+        //Adding behavior
         Mockito.when(authenticatorMock.authenticateUser(username, password_false))
                 .thenReturn(false);
 
@@ -25,10 +28,10 @@ public class AuthentificatorAppicationTest {
 
         assertEquals(false, authenticator.authenticate(username, password_false));
         assertEquals(true, authenticator.authenticate(username, password_true));
-
-
-
-
+        //verify behavior
+        verify(authenticatorMock).authenticateUser(username,password_true);
     }
+
+
 }
 
